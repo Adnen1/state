@@ -1,25 +1,46 @@
-import logo from './logo.svg';
+
+import React, { Component } from "react";
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+ state={fullName:"jalel", bio:"im lazy", imgSrc: "./ProfilePhoto.jpg", profession:"Batal", show:false, time :0} 
+  HundleClick=() => {this.setState({ show: !this.state.show })}
+  handletime=()=>{
+    this.setState({time : this.state.time +1 })
+    return this.state.time
+  }
+
+  componentDidMount(){
+    var timer = setInterval(this.handletime , 10)
+    return this.setState({time : timer})
+  }
+
+  
+ 
+  render() {
+  console.log(this.state.show)
+  
+    
+    return (
+      
+      <div className='App'>
+       
+       
+       <button onClick={this.HundleClick}>Show</button>
+       {(this.state.show) ? <div className="img"> <img src={this.state.imgSrc}></img></div> : <div></div>}
+       {(this.state.show) ? <div className="name">My name is {this.state.fullName}</div> : <div></div>}
+       {(this.state.show) ? <div className="bio"> {this.state.bio}</div> : <div></div>}
+      
+       {(this.state.show) ? <div className="profession"> {this.state.profession}</div> : <div></div>}
+       {(this.state.show) ? <div className="time"> {this.state.time}</div> : <div></div>}
+
+      </div>
+    );
+  }
 }
 
 export default App;
+
+

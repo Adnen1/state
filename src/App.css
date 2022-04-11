@@ -1,6 +1,27 @@
 .App {
   text-align: center;
 }
+.name{
+  background-color: bisque;
+  align-items: center;
+  
+  
+}
+.img {
+  border-radius: 5000px;
+  background-color: #61dafb;
+  box-sizing: border-box;
+}
+.profession{
+  background-color: rgb(173, 173, 184);
+  align-items: center;
+ 
+}
+.time {
+  border-radius:  10px;
+  box-sizing: border-box;
+  background-color: aliceblue;
+}
 
 .App-logo {
   height: 40vmin;
@@ -11,6 +32,12 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.bio {
+  border-radius: 30px;
+  background-color: aqua;
+  border: 0 0 10px
+
 }
 
 .App-header {
